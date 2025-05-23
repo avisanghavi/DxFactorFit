@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Micro Agents - DXFactor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --black-pure: #000000;
+            --black-rich: #0A0A0A;
+            --black-deep: #111111;
+            --black-soft: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-tertiary: rgba(255, 255, 255, 0.6);
+            --accent-primary: #00FF95;
+            --accent-secondary: #00E085;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient-green: linear-gradient(135deg, #00FF95 0%, #00E085 100%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 255, 149, 0.1) 0%, rgba(0, 224, 133, 0.05) 100%);
+            --glow-green: 0 0 30px rgba(0, 255, 149, 0.3);
+            --transition-fast: 0.15s ease;
+            --transition-medium: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            --container-width: 1400px;
+            --container-padding: clamp(20px, 5vw, 40px);
+            --section-spacing: clamp(80px, 15vh, 160px);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            --border-radius-full: 9999px;
+            --header-height: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black-pure);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 149, 0.1);
+            padding: 1.25rem 0;
+            transition: all var(--transition-medium);
+            height: var(--header-height);
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-dx {
+            color: var(--text-primary);
+        }
+
+        .logo-factor {
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-green);
+            transition: width var(--transition-medium);
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--border-radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-green);
+            color: var(--black-rich);
+            box-shadow: var(--glow-green);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(0, 255, 149, 0.4);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: var(--header-height);
+            padding: var(--section-spacing) 0;
+            background: var(--black-pure);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 149, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 149, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .page-header-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* Agents Grid */
+        .agents-section {
+            padding: var(--section-spacing) 0;
+            background: var(--black-rich);
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .agent-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glow);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            z-index: -1;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .agent-card:hover::before {
+            opacity: 1;
+        }
+
+        .agent-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-green);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black-rich);
+        }
+
+        .agent-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--accent-primary);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .agent-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .agent-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .agent-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: var(--border-radius-md);
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .agent-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-full);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-medium);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            box-shadow: 0 0 20px rgba(0, 255, 149, 0.2);
+        }
+
+        .btn-text {
+            background: none;
+            border: none;
+            color: var(--accent-primary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .btn-text:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .agent-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .agent-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span class="logo-dx">DX</span><span class="logo-factor">Factor</span>
+                </a>
+                <div class="nav-links">
+                    <a href="ai-map.html" class="nav-link">AI MAP</a>
+                    <a href="agents.html" class="nav-link">Agents</a>
+                    <a href="results.html" class="nav-link">Results</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <a href="index.html#demo" class="btn btn-primary">Book Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">AI Micro Agents</h1>
+                <p class="page-subtitle">Meet our specialized AI agents designed for fitness & wellness. Each agent is purpose-built to solve specific challenges and drive measurable results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="agents-section">
+        <div class="container">
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-save"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Click2Save</h3>
+                    <p class="agent-description">Proactively identifies at-risk members and deploys targeted retention strategies before they cancel. Uses predictive analytics to prevent churn.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">85%</span>
+                            <span class="metric-label">Churn Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$2.4M</span>
+                            <span class="metric-label">Revenue Saved</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Member Concierge</h3>
+                    <p class="agent-description">24/7 AI-powered member support that handles inquiries, bookings, and personalized recommendations with human-like intelligence.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">90%</span>
+                            <span class="metric-label">Resolution Rate</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Availability</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Lead Converter</h3>
+                    <p class="agent-description">Intelligently nurtures prospects through personalized journeys, optimizing conversion at every touchpoint with data-driven insights.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Conversion Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">3.2x</span>
+                            <span class="metric-label">Lead Quality</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Revenue Optimizer</h3>
+                    <p class="agent-description">Analyzes member behavior and market trends to identify upselling and cross-selling opportunities that maximize lifetime value.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">25%</span>
+                            <span class="metric-label">Revenue Boost</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">$1.8M</span>
+                            <span class="metric-label">Additional Revenue</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Fitness Coach AI</h3>
+                    <p class="agent-description">Delivers personalized workout plans and nutrition guidance based on individual goals, progress, and preferences.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Engagement Increase</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">4.9</span>
+                            <span class="metric-label">Satisfaction Score</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <div class="agent-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="agent-status">
+                            <span class="status-dot"></span>
+                            <span>Active</span>
+                        </div>
+                    </div>
+                    <h3 class="agent-name">Operations Manager</h3>
+                    <p class="agent-description">Optimizes facility usage, manages equipment maintenance, and automates administrative tasks for maximum efficiency.</p>
+                    <div class="agent-metrics">
+                        <div class="metric">
+                            <span class="metric-value">50%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">30%</span>
+                            <span class="metric-label">Efficiency Gain</span>
+                        </div>
+                    </div>
+                    <div class="agent-actions">
+                        <a href="#" class="btn-outline">View Details</a>
+                        <button class="btn-text">Configure <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

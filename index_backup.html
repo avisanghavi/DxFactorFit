@@ -1,0 +1,3353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DXFactor - AI-Powered Revenue Solutions for Fitness & Wellness</title>
+    <meta name="description" content="Transform your fitness & wellness business with AI Micro Agents that drive revenue, retention, and operational efficiency at scale.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzAwZmY5NSIgZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptLS45OTcgMTVsLS4xNDMtLjEzLTQuOTg3LTQuOTg4Ljg0OS0uODQ5IDQuMjggNC4yOCA2Ljk3LTYuOTcuODUuODQ5LTcuNjggNy42OHoiPjwvcGF0aD48L3N2Zz4=">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            /* Core Brand Colors */
+            --black-pure: #000000;
+            --black-rich: #0F0F0F;
+            --black-charcoal: #191919;
+            --green-neon: #00FF95;
+            --green-emerald: #00CC78;
+            --green-mint: #7AFFCB;
+            --gray-900: #111111;
+            --gray-800: #1E1E1E;
+            --gray-700: #2C2C2C;
+            --gray-600: #3D3D3D;
+            --gray-500: #666666;
+            --gray-400: #888888;
+            --white: #FFFFFF;
+            
+            /* Semantic Colors */
+            --bg-primary: var(--black-pure);
+            --bg-secondary: var(--black-charcoal);
+            --bg-tertiary: var(--gray-900);
+            --bg-card: rgba(15, 15, 15, 0.7);
+            --text-primary: var(--white);
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-tertiary: rgba(255, 255, 255, 0.65);
+            --accent-primary: var(--green-neon);
+            --accent-secondary: var(--green-emerald);
+            
+            /* Effects */
+            --glow-green: 0 0 25px rgba(0, 255, 149, 0.5), 0 0 10px rgba(0, 255, 149, 0.2);
+            --glow-strong: 0 0 40px rgba(0, 255, 149, 0.8), 0 0 20px rgba(0, 255, 149, 0.4);
+            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --glass-border: rgba(255, 255, 255, 0.05);
+            --glass-bg: rgba(25, 25, 25, 0.6);
+            
+            /* Gradients */
+            --gradient-green: linear-gradient(135deg, var(--green-neon) 0%, var(--green-emerald) 100%);
+            --gradient-dark: linear-gradient(135deg, var(--black-pure) 0%, var(--black-rich) 90%);
+            --gradient-glow: linear-gradient(135deg, rgba(0, 255, 149, 0.15) 0%, rgba(0, 204, 120, 0.05) 100%);
+            
+            /* Animation */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Layout */
+            --container-width: 1400px;
+            --container-padding: clamp(20px, 5vw, 40px);
+            --section-spacing: clamp(80px, 15vh, 160px);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            --border-radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            font-weight: 400;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        /* Modern Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Enhanced Button Styling */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            border-radius: var(--border-radius-full);
+            cursor: pointer;
+            transition: 
+                transform var(--transition-medium),
+                box-shadow var(--transition-medium),
+                background-color var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            z-index: 1;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-medium);
+        }
+
+        .btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: var(--black-rich);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--glow-green);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: var(--glow-green);
+            background-color: rgba(0, 255, 149, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-icon {
+            margin-left: 8px;
+        }
+
+        /* Advanced Text Selection */
+        ::selection {
+            background-color: var(--accent-primary);
+            color: var(--black-rich);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: var(--black-rich);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--gray-700);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: var(--accent-primary);
+        }
+
+        /* Background Effects */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(0, 255, 149, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 149, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Dynamic Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid var(--accent-primary);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            z-index: 9999;
+            mix-blend-mode: exclusion;
+        }
+        
+        .cursor.active {
+            width: 50px;
+            height: 50px;
+            border-width: 3px;
+            background-color: rgba(0, 255, 149, 0.1);
+        }
+
+        /* Loading animation for lazy-loaded elements */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        .shimmer {
+            animation: shimmer 2s infinite linear;
+            background: linear-gradient(to right, var(--gray-800) 4%, var(--gray-700) 25%, var(--gray-800) 36%);
+            background-size: 1000px 100%;
+        }
+
+        /* Global Animation Classes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0; 
+                transform: translateX(-50px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+
+        @keyframes slideInRight {
+            from { 
+                opacity: 0; 
+                transform: translateX(50px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .slide-up {
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            animation: slideInRight 0.8s ease forwards;
+        }
+
+        .stagger > * {
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .stagger > *:nth-child(1) { animation-delay: 0.1s; }
+        .stagger > *:nth-child(2) { animation-delay: 0.2s; }
+        .stagger > *:nth-child(3) { animation-delay: 0.3s; }
+        .stagger > *:nth-child(4) { animation-delay: 0.4s; }
+        .stagger > *:nth-child(5) { animation-delay: 0.5s; }
+        .stagger > *:nth-child(6) { animation-delay: 0.6s; }
+        
+        .animate {
+            animation-play-state: running !important;
+        }
+        
+        [data-animation] {
+            opacity: 0;
+        }
+        
+        [data-animation].animate {
+            opacity: 1;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 149, 0.1);
+            padding: 1.25rem 0;
+            transition: all var(--transition-medium);
+        }
+
+        .header.scrolled {
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-dx {
+            color: var(--white);
+        }
+
+        .logo-factor {
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-green);
+            transition: width var(--transition-medium);
+            z-index: -1;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-green);
+            transition: width var(--transition-medium);
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 0.65rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 10rem 0 6rem;
+            overflow: hidden;
+            background: var(--black-pure);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 149, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 149, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .hero-glow-1 {
+            position: absolute;
+            top: -300px;
+            right: -200px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 255, 149, 0.15) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: 0;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            bottom: -400px;
+            left: -200px;
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(0, 255, 149, 0.1) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: 0;
+            animation: float 20s infinite ease-in-out reverse;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 950px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-full);
+            padding: 0.5rem 1.25rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            color: var(--accent-primary);
+            animation: pulse 2s infinite;
+        }
+
+        .hero-title {
+            font-size: clamp(2.75rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .line-break {
+            display: block;
+            height: 0.5rem;
+        }
+
+        .text-gradient {
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-strike {
+            position: relative;
+            display: inline-block;
+        }
+
+        .text-strike::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 110%;
+            height: 5px;
+            background: var(--accent-primary);
+            transform: translateY(-50%);
+        }
+
+        .highlight {
+            color: var(--accent-primary);
+            position: relative;
+            margin: 0 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 80%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .stat {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-medium);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-tertiary);
+            animation: bounce 2s infinite;
+            z-index: 10;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .scroll-indicator i {
+            font-size: 1rem;
+            color: var(--accent-primary);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-content {
+                max-width: 800px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-subtitle {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Platform Section Styles */
+        .platform-section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-rich);
+        }
+
+        .platform-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .platform-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1200px;
+            height: 1200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 149, 0.07) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--glass-bg);
+            color: var(--accent-primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 255, 149, 0.2);
+        }
+
+        .section-title {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Dashboard Visualization */
+        .platform-visual {
+            max-width: 1000px;
+            margin: 0 auto 5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .platform-dashboard {
+            background: var(--gray-900);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--gray-800);
+            position: relative;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--black-rich);
+            padding: 0.75rem 1.25rem;
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .dashboard-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dash-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray-700);
+        }
+
+        .dash-dot:nth-child(1) {
+            background: #FF5F56;
+        }
+
+        .dash-dot:nth-child(2) {
+            background: #FFBD2E;
+        }
+
+        .dash-dot:nth-child(3) {
+            background: #27C93F;
+        }
+
+        .dashboard-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .dashboard-controls {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+        }
+
+        .dashboard-content {
+            display: flex;
+            height: 500px;
+        }
+
+        .dash-sidebar {
+            width: 220px;
+            background: var(--gray-800);
+            border-right: 1px solid var(--gray-700);
+            padding: 1.5rem 0;
+        }
+
+        .dash-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-green);
+            border-radius: var(--border-radius-sm);
+            color: var(--black-rich);
+        }
+
+        .dash-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dash-nav-item {
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .dash-nav-item.active {
+            background: rgba(0, 255, 149, 0.1);
+            color: var(--accent-primary);
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .dash-nav-item:hover:not(.active) {
+            background: var(--gray-700);
+        }
+
+        .dash-main {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .dash-welcome {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .dash-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .dash-stat-item {
+            background: var(--gray-800);
+            border-radius: var(--border-radius-md);
+            padding: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-700);
+        }
+
+        .dash-stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .dash-stat-item:nth-child(1) .dash-stat-value {
+            color: var(--accent-primary);
+        }
+
+        .dash-stat-item:nth-child(2) .dash-stat-value {
+            color: #FF5F56;
+        }
+
+        .dash-stat-item:nth-child(3) .dash-stat-value {
+            color: #27C93F;
+        }
+
+        .dash-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .dash-stat-chart {
+            height: 40px;
+            margin-top: 0.75rem;
+            background: linear-gradient(90deg, var(--gray-700) 0%, var(--gray-800) 20%, var(--gray-700) 40%, var(--gray-800) 80%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .dash-section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .dash-agent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .dash-agent-item {
+            display: flex;
+            align-items: center;
+            background: var(--gray-800);
+            border-radius: var(--border-radius-md);
+            padding: 1rem;
+            border: 1px solid var(--gray-700);
+        }
+
+        .agent-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .agent-status.active {
+            background: var(--accent-primary);
+            box-shadow: 0 0 10px rgba(0, 255, 149, 0.5);
+        }
+
+        .agent-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-right: auto;
+        }
+
+        .agent-metric {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Platform Pillars */
+        .platform-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glow);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            z-index: -1;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        .pillar-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-green);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black-rich);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-medium);
+        }
+
+        .pillar-card:hover .pillar-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .pillar-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .pillar-metrics {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .pillar-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius-md);
+            min-width: 80px;
+        }
+
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--accent-primary);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-align: center;
+        }
+
+        .platform-cta {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-large {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .platform-pillars {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .dash-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .platform-pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-content {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .dash-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--gray-700);
+                padding: 1rem 1.5rem;
+            }
+
+            .dash-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .dash-nav-item {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .dash-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Agents Section Styles */
+        .agents-section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-pure);
+        }
+
+        .agents-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .agents-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 149, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 149, 0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+
+        .agents-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 15% 85%, rgba(0, 255, 149, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 85% 15%, rgba(0, 255, 149, 0.08) 0%, transparent 35%);
+            filter: blur(60px);
+        }
+
+        .agents-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .agent-tab {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .agent-tab.active {
+            background: rgba(0, 255, 149, 0.1);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .agent-tab:hover:not(.active) {
+            background: var(--glass-bg);
+            transform: translateY(-2px);
+        }
+
+        .agents-wrapper {
+            position: relative;
+            z-index: 1;
+            perspective: 1000px;
+        }
+
+        .agents-grid-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .agent-card {
+            height: 400px;
+            width: 100%;
+            perspective: 1000px;
+        }
+
+        .agent-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .agent-card:hover .agent-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .agent-card-front, .agent-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .agent-card-front {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transition: all var(--transition-medium);
+        }
+
+        .agent-card-back {
+            background: var(--gray-800);
+            border: 1px solid var(--glass-border);
+            transform: rotateY(180deg);
+        }
+
+        .agent-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-green);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black-rich);
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .agent-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .agent-impact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius-md);
+            padding: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .impact-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .impact-label {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-align: center;
+        }
+
+        .agent-details-btn, .agent-back-btn {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 0.75rem;
+            border-radius: var(--border-radius-md);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .agent-details-btn:hover, .agent-back-btn:hover {
+            background: rgba(0, 255, 149, 0.1);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .agent-card-back h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+            text-align: center;
+        }
+
+        .agent-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .agent-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .agent-features li i {
+            color: var(--accent-primary);
+            margin-top: 0.2rem;
+        }
+
+        .agents-cta {
+            text-align: center;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .agents-grid-view {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .agents-grid-view {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .agent-tab {
+                font-size: 0.8rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials-section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-rich);
+        }
+
+        .testimonials-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .testimonials-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 255, 149, 0.06) 0%, transparent 60%),
+                radial-gradient(circle at 70% 30%, rgba(0, 255, 149, 0.06) 0%, transparent 60%);
+            filter: blur(80px);
+            opacity: 0.8;
+        }
+
+        .testimonials-carousel {
+            max-width: 1000px;
+            margin: 0 auto 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            padding: 1.5rem 0;
+        }
+
+        .testimonials-track::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            scroll-snap-align: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            transition: all var(--transition-medium);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-content {
+            position: relative;
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: -1.25rem;
+            left: -1rem;
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-metrics {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .testimonial-metric {
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--border-radius-md);
+            padding: 0.75rem 1.25rem;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent-primary);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--text-primary);
+        }
+
+        .author-position {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .author-company {
+            font-size: 0.875rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .testimonial-arrow:hover {
+            background: rgba(0, 255, 149, 0.1);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .testimonial-indicators {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-700);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .indicator.active {
+            background: var(--accent-primary);
+            transform: scale(1.5);
+        }
+
+        /* Brands Showcase */
+        .brands-showcase {
+            text-align: center;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brands-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .brands-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .brand-logo {
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: all var(--transition-medium);
+        }
+
+        .brand-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 1rem;
+            }
+
+            .testimonial-metrics {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .brands-logos {
+                gap: 1.5rem;
+            }
+
+            .brand-logo img {
+                max-width: 100px;
+            }
+        }
+
+        /* Services Section Styles */
+        .services-section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-pure);
+        }
+
+        .services-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .services-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 75% 25%, rgba(0, 255, 149, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 25% 75%, rgba(0, 255, 149, 0.08) 0%, transparent 45%);
+            filter: blur(80px);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-glow);
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+            z-index: -1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-green);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black-rich);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-medium);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-top: auto;
+            transition: all var(--transition-medium);
+        }
+
+        .service-link i {
+            transition: transform var(--transition-medium);
+        }
+
+        .service-link:hover {
+            color: var(--green-mint);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* CTA Section Styles */
+        .cta-section {
+            padding: var(--section-spacing) 0;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-rich);
+        }
+
+        .cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .cta-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 149, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 149, 0.1) 0%, transparent 60%);
+            filter: blur(100px);
+            z-index: 0;
+        }
+
+        .cta-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .cta-form {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-form:hover {
+            border-color: var(--accent-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .form-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent-primary);
+        }
+
+        .form-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border-radius: var(--border-radius-md);
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all var(--transition-medium);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 10px rgba(0, 255, 149, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .form-note {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .cta-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cta-feature i {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+
+        .cta-feature span {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 992px) {
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .cta-content p {
+                max-width: 100%;
+            }
+            
+            .cta-form {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cta-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+            background: var(--black-rich);
+            border-top: 1px solid rgba(0, 255, 149, 0.1);
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .footer-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 149, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 149, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 2fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .footer-tagline {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            max-width: 350px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            background: var(--accent-primary);
+            color: var(--black-rich);
+            box-shadow: var(--glow-green);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-green);
+            border-radius: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all var(--transition-medium);
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-primary);
+            transition: width var(--transition-medium);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .footer-section ul li a:hover::before {
+            width: 100%;
+        }
+
+        .footer-bottom {
+            padding: 2rem 0;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition-medium);
+        }
+
+        .footer-legal a:hover {
+            color: var(--accent-primary);
+        }
+
+        @media (max-width: 992px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-brand {
+                text-align: center;
+                align-items: center;
+            }
+            
+            .footer-tagline {
+                max-width: 500px;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                grid-template-columns: 1fr;
+                max-width: 450px;
+                margin: 0 auto;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="cursor"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <span class="logo-dx">DX</span><span class="logo-factor">Factor</span>
+                </a>
+                <div class="nav-links">
+                    <a href="ai-map.html" class="nav-link">AI MAP</a>
+                    <a href="agents.html" class="nav-link">Agents</a>
+                    <a href="results.html" class="nav-link">Results</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <a href="#demo" class="btn btn-primary nav-cta">Book Demo</a>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-glow-1"></div>
+            <div class="hero-glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-animation="fade-in" data-delay="0.1">
+                    <i class="fas fa-bolt"></i> Transforming Fitness & Wellness with AI
+                </div>
+                <h1 class="hero-title" data-animation="slide-up" data-delay="0.3">
+                    We Don't Build <span class="line-break"></span>
+                    <span class="text-strike">Software</span><span class="highlight">—</span><span class="line-break"></span>
+                    We Build <span class="text-gradient">Revenue</span><span class="line-break"></span>
+                    <span class="text-gradient">Machines</span>
+                </h1>
+                <p class="hero-subtitle" data-animation="slide-up" data-delay="0.5">
+                    Transforming Fitness & Wellness with AI Micro Agents that drive revenue, 
+                    retention, and efficiency at scale. Experience the power of purpose-built 
+                    artificial intelligence.
+                </p>
+                
+                <div class="hero-buttons" data-animation="slide-up" data-delay="0.7">
+                    <a href="#demo" class="btn btn-primary">
+                        Book Your Demo
+                        <i class="fas fa-arrow-right btn-icon"></i>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        Explore Services
+                        <i class="fas fa-chevron-down btn-icon"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-stats" data-animation="slide-up" data-delay="0.9">
+                    <div class="stat">
+                        <span class="stat-number">$2B+</span>
+                        <span class="stat-label">Revenue Generated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">120%</span>
+                        <span class="stat-label">Net Revenue Retention</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">96</span>
+                        <span class="stat-label">Net Promoter Score</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll for more</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+        <div class="platform-bg">
+            <div class="platform-glow"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-animation="slide-up">
+                <span class="section-tag">The Platform</span>
+                <h2 class="section-title">Inside <span class="text-gradient">AI MAP</span>: <br>Your Micro Agent Platform</h2>
+                <p class="section-subtitle">AI MAP isn't just software—it's an ecosystem of intelligent micro-agents that work 24/7 to grow your business. Each agent is purpose-built for fitness & wellness, delivering measurable results from day one.</p>
+            </div>
+            
+            <div class="platform-visual" data-animation="fade-in" data-delay="0.3">
+                <div class="platform-dashboard">
+                    <div class="dashboard-header">
+                        <div class="dashboard-actions">
+                            <span class="dash-dot"></span>
+                            <span class="dash-dot"></span>
+                            <span class="dash-dot"></span>
+                        </div>
+                        <div class="dashboard-title">AI MAP Dashboard</div>
+                        <div class="dashboard-controls">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="dash-sidebar">
+                            <div class="dash-logo">
+                                <div class="logo-icon"><i class="fas fa-microchip"></i></div>
+                                <span>AI MAP</span>
+                            </div>
+                            <div class="dash-nav">
+                                <div class="dash-nav-item active"><i class="fas fa-home"></i> Overview</div>
+                                <div class="dash-nav-item"><i class="fas fa-robot"></i> Agents</div>
+                                <div class="dash-nav-item"><i class="fas fa-chart-line"></i> Analytics</div>
+                                <div class="dash-nav-item"><i class="fas fa-users"></i> Members</div>
+                                <div class="dash-nav-item"><i class="fas fa-cog"></i> Settings</div>
+                            </div>
+                        </div>
+                        <div class="dash-main">
+                            <div class="dash-welcome">Welcome back, Sarah!</div>
+                            <div class="dash-stats">
+                                <div class="dash-stat-item">
+                                    <div class="dash-stat-value">+24%</div>
+                                    <div class="dash-stat-label">Revenue Growth</div>
+                                    <div class="dash-stat-chart"></div>
+                                </div>
+                                <div class="dash-stat-item">
+                                    <div class="dash-stat-value">-18%</div>
+                                    <div class="dash-stat-label">Churn Rate</div>
+                                    <div class="dash-stat-chart"></div>
+                                </div>
+                                <div class="dash-stat-item">
+                                    <div class="dash-stat-value">93%</div>
+                                    <div class="dash-stat-label">Member Satisfaction</div>
+                                    <div class="dash-stat-chart"></div>
+                                </div>
+                            </div>
+                            <div class="dash-agents">
+                                <div class="dash-section-title">Active Agents</div>
+                                <div class="dash-agent-list">
+                                    <div class="dash-agent-item">
+                                        <div class="agent-status active"></div>
+                                        <div class="agent-name">Click2Save</div>
+                                        <div class="agent-metric">42 members retained this week</div>
+                                    </div>
+                                    <div class="dash-agent-item">
+                                        <div class="agent-status active"></div>
+                                        <div class="agent-name">Lead Converter</div>
+                                        <div class="agent-metric">18 new conversions today</div>
+                                    </div>
+                                    <div class="dash-agent-item">
+                                        <div class="agent-status active"></div>
+                                        <div class="agent-name">Member Concierge</div>
+                                        <div class="agent-metric">128 queries resolved</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platform-pillars stagger" data-animation="slide-up" data-delay="0.5">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth & Retention</h3>
+                    <p>Agents that convert leads, reduce churn, and maximize lifetime value through intelligent engagement and personalized experiences.</p>
+                    <div class="pillar-metrics">
+                        <div class="pillar-metric">
+                            <span class="metric-value">85%</span>
+                            <span class="metric-label">churn reduction</span>
+                        </div>
+                        <div class="pillar-metric">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">conversion increase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Operational Efficiency</h3>
+                    <p>Streamline operations with agents that automate workflows, optimize resources, and eliminate manual processes.</p>
+                    <div class="pillar-metrics">
+                        <div class="pillar-metric">
+                            <span class="metric-value">70%</span>
+                            <span class="metric-label">task automation</span>
+                        </div>
+                        <div class="pillar-metric">
+                            <span class="metric-value">50%</span>
+                            <span class="metric-label">cost reduction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Member Experience</h3>
+                    <p>Deliver exceptional experiences with agents that provide instant support, personalized recommendations, and seamless interactions.</p>
+                    <div class="pillar-metrics">
+                        <div class="pillar-metric">
+                            <span class="metric-value">90%</span>
+                            <span class="metric-label">response rate</span>
+                        </div>
+                        <div class="pillar-metric">
+                            <span class="metric-value">4.8</span>
+                            <span class="metric-label">satisfaction score</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platform-cta" data-animation="fade-in" data-delay="0.7">
+                <a href="#agents" class="btn btn-secondary btn-large">
+                    Explore The Agents
+                    <i class="fas fa-arrow-right btn-icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents" class="agents-section">
+        <div class="agents-bg">
+            <div class="agents-grid"></div>
+            <div class="agents-glow"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-animation="slide-up">
+                <span class="section-tag">AI Micro Agents</span>
+                <h2 class="section-title">Meet Your <span class="text-gradient">AI Workforce</span></h2>
+                <p class="section-subtitle">Each agent is a specialist, designed to solve specific challenges in fitness & wellness. Deploy individually or as a complete ecosystem to transform your business.</p>
+            </div>
+            
+            <div class="agents-tabs" data-animation="fade-in" data-delay="0.3">
+                <button class="agent-tab active" data-category="all">All Agents</button>
+                <button class="agent-tab" data-category="growth">Growth</button>
+                <button class="agent-tab" data-category="retention">Retention</button>
+                <button class="agent-tab" data-category="experience">Experience</button>
+                <button class="agent-tab" data-category="operations">Operations</button>
+            </div>
+            
+            <div class="agents-wrapper">
+                <div class="agents-grid-view" data-animation="fade-in" data-delay="0.5">
+                    <div class="agent-card" data-category="retention">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="agent-name">Click2Save</h3>
+                                <p class="agent-description">Proactively identifies at-risk members and deploys targeted retention strategies before they cancel.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">85%</span>
+                                    <span class="impact-label">reduction in churn rate</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Click2Save Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Analyzes 50+ behavior signals to predict cancellation risk</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-bullseye"></i>
+                                        <span>Creates personalized retention offers based on member history</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-comments"></i>
+                                        <span>Engages via preferred channel (email, SMS, app) at optimal time</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <span>Continuously optimizes strategies based on results</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card" data-category="experience">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3 class="agent-name">Member Concierge</h3>
+                                <p class="agent-description">24/7 AI-powered member support that handles inquiries, bookings, and personalized recommendations.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">90%</span>
+                                    <span class="impact-label">query resolution rate</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Member Concierge Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-clock"></i>
+                                        <span>Available 24/7 across all digital channels</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-sync-alt"></i>
+                                        <span>Integrates with your booking and membership systems</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-user-circle"></i>
+                                        <span>Remembers preferences and history for personalized service</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-language"></i>
+                                        <span>Supports multiple languages and escalates to human when needed</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card" data-category="growth">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3 class="agent-name">Lead Converter</h3>
+                                <p class="agent-description">Intelligently nurtures prospects through personalized journeys, optimizing conversion at every touchpoint.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">40%</span>
+                                    <span class="impact-label">increase in lead conversion</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Lead Converter Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-users"></i>
+                                        <span>Creates unique buyer personas based on behavioral data</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-route"></i>
+                                        <span>Designs optimal conversion paths for each prospect type</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Schedules perfectly timed multi-channel touchpoints</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Identifies ideal moment to involve human sales team</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card" data-category="growth">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <h3 class="agent-name">Revenue Optimizer</h3>
+                                <p class="agent-description">Analyzes member behavior and market trends to identify upselling and cross-selling opportunities.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">25%</span>
+                                    <span class="impact-label">boost in revenue per member</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Revenue Optimizer Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-search-dollar"></i>
+                                        <span>Identifies spending patterns and service gaps</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-tags"></i>
+                                        <span>Creates personalized upsell and cross-sell bundles</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-percentage"></i>
+                                        <span>Optimizes pricing based on willingness to pay</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-rocket"></i>
+                                        <span>Deploys offers through email, app, and in-person staff</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card" data-category="experience">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-running"></i>
+                                </div>
+                                <h3 class="agent-name">Fitness Coach AI</h3>
+                                <p class="agent-description">Delivers personalized workout plans and nutrition guidance based on individual goals and progress.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">60%</span>
+                                    <span class="impact-label">improvement in member engagement</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Fitness Coach AI Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-dumbbell"></i>
+                                        <span>Creates adaptive workout plans based on fitness level</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-apple-alt"></i>
+                                        <span>Provides nutrition guidance aligned with fitness goals</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-heartbeat"></i>
+                                        <span>Adjusts plans based on progress and lifestyle changes</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-trophy"></i>
+                                        <span>Celebrates achievements and maintains motivation</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="agent-card" data-category="operations">
+                        <div class="agent-card-inner">
+                            <div class="agent-card-front">
+                                <div class="agent-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3 class="agent-name">Operations Manager</h3>
+                                <p class="agent-description">Optimizes facility usage, manages equipment maintenance, and automates administrative tasks.</p>
+                                <div class="agent-impact">
+                                    <span class="impact-value">50%</span>
+                                    <span class="impact-label">reduction in operational costs</span>
+                                </div>
+                                <button class="agent-details-btn">
+                                    <i class="fas fa-info-circle"></i> How it works
+                                </button>
+                            </div>
+                            <div class="agent-card-back">
+                                <h4>How Operations Manager Works</h4>
+                                <ul class="agent-features">
+                                    <li>
+                                        <i class="fas fa-calendar-check"></i>
+                                        <span>Optimizes staff scheduling based on demand patterns</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-tools"></i>
+                                        <span>Predicts maintenance needs before equipment fails</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Manages energy usage to reduce utility costs</span>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-file-invoice"></i>
+                                        <span>Automates invoicing, payroll, and inventory management</span>
+                                    </li>
+                                </ul>
+                                <button class="agent-back-btn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agents-cta" data-animation="fade-in" data-delay="0.7">
+                <a href="#demo" class="btn btn-primary btn-large">
+                    See Agents in Action
+                    <i class="fas fa-play-circle btn-icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="results" class="testimonials-section">
+        <div class="testimonials-bg">
+            <div class="testimonials-glow"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-animation="slide-up">
+                <span class="section-tag">Success Stories</span>
+                <h2 class="section-title">What Our <span class="text-gradient">Partners Say</span></h2>
+                <p class="section-subtitle">Industry leaders trust our AI agents to transform their businesses. See the real impact we've made for fitness and wellness brands across the globe.</p>
+            </div>
+            
+            <div class="testimonials-carousel" data-animation="fade-in" data-delay="0.3">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">"DXFactor understands our industry, delivers real results, and moves fast. Their responsiveness and expertise cut costs by 50%—a true game-changer for us!"</p>
+                            <div class="testimonial-metrics">
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">50%</span>
+                                    <span class="metric-label">Cost Reduction</span>
+                                </div>
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">3x</span>
+                                    <span class="metric-label">Member Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Don Dickerson" />
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Don Dickerson</div>
+                                <div class="author-position">Vice President</div>
+                                <div class="author-company">FITNESS SF</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">"DXFactor was critical in delivering a reliable and scalable streaming platform for CRUNCH+ on time and within budget, transforming our digital content delivery."</p>
+                            <div class="testimonial-metrics">
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">35%</span>
+                                    <span class="metric-label">Revenue Increase</span>
+                                </div>
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">28k</span>
+                                    <span class="metric-label">New Subscribers</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Mike Neff" />
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Mike Neff</div>
+                                <div class="author-position">Executive VP Member Services</div>
+                                <div class="author-company">Crunch</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="testimonial-text">"The technology integration has streamlined our operations, giving us a unified view of our data and enabling faster, more informed decisions."</p>
+                            <div class="testimonial-metrics">
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">40%</span>
+                                    <span class="metric-label">Operational Efficiency</span>
+                                </div>
+                                <div class="testimonial-metric">
+                                    <span class="metric-value">98%</span>
+                                    <span class="metric-label">Data Accuracy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="Rob Koehler" />
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Rob Koehler</div>
+                                <div class="author-position">Director of Technology</div>
+                                <div class="author-company">Wisconsin Athletic Club</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-controls">
+                    <button class="testimonial-arrow prev" aria-label="Previous testimonial">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="testimonial-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                    <button class="testimonial-arrow next" aria-label="Next testimonial">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="brands-showcase" data-animation="slide-up" data-delay="0.7">
+                <div class="brands-title">Trusted by Leading Brands</div>
+                <div class="brands-logos">
+                    <div class="brand-logo">
+                        <img src="https://via.placeholder.com/120x60/1a1a1a/00ff95?text=CRUNCH" alt="Crunch" />
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://via.placeholder.com/120x60/1a1a1a/00ff95?text=FITNESS+SF" alt="FITNESS SF" />
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://via.placeholder.com/120x60/1a1a1a/00ff95?text=WAC" alt="Wisconsin Athletic Club" />
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://via.placeholder.com/120x60/1a1a1a/00ff95?text=EQUINOX" alt="Equinox" />
+                    </div>
+                    <div class="brand-logo">
+                        <img src="https://via.placeholder.com/120x60/1a1a1a/00ff95?text=LIFETIME" alt="Lifetime Fitness" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="services-bg">
+            <div class="services-glow"></div>
+        </div>
+        <div class="container">
+            <div class="section-header" data-animation="slide-up">
+                <span class="section-tag">Full-Stack Solutions</span>
+                <h2 class="section-title">Beyond the <span class="text-gradient">Platform</span></h2>
+                <p class="section-subtitle">AI MAP is powered by our proven expertise in traditional software services. We deliver faster, more cost-effective solutions by leveraging AI to accelerate our proven methodologies.</p>
+            </div>
+            
+            <div class="services-grid" data-animation="fade-in" data-delay="0.3">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Agentic AI Development</h3>
+                    <p>Custom AI agents tailored to your specific business needs, integrated seamlessly with your existing systems.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Warehousing & BI</h3>
+                    <p>Scalable data infrastructure that powers intelligent decision-making and real-time business insights.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Engaging mobile experiences with AI-powered features that drive member engagement and retention.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>System Integrations</h3>
+                    <p>Seamless connections between your MRM, ERP, marketing, and operational systems for unified data flow.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Dedicated Engineering Teams</h3>
+                    <p>On-demand access to specialized engineering talent, augmented with AI tools for faster delivery.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Advanced analytics and predictive modeling to unlock hidden insights in your business data.</p>
+                    <a href="#" class="service-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-glow"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content" data-animation="fade-in">
+                <h2>Ready to <span class="text-gradient">Transform</span><br>Your Business?</h2>
+                <p>Experience how AI MAP can drive measurable results for your fitness & wellness business in just 30 days.</p>
+                
+                <div class="cta-form">
+                    <div class="form-header">
+                        <div class="form-title">Book Your Demo</div>
+                        <div class="form-subtitle">30-minute personalized session</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Work Email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Company" class="form-input">
+                    </div>
+                    <button class="btn btn-primary form-submit">
+                        <span>Schedule Demo</span>
+                        <i class="fas fa-calendar-check btn-icon"></i>
+                    </button>
+                    <div class="form-note">
+                        <i class="fas fa-lock"></i> Your information is secure and will never be shared
+                    </div>
+                </div>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>30-day free trial</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Full platform access</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Dedicated support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-grid"></div>
+        </div>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-dx">DX</span><span class="logo-factor">Factor</span>
+                    </a>
+                    <p class="footer-tagline">
+                        Transforming Fitness & Wellness with AI Micro Agents that drive revenue, retention, and efficiency at scale.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#">AI MAP Overview</a></li>
+                            <li><a href="#">Agent Library</a></li>
+                            <li><a href="#">Integrations</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">AI Development</a></li>
+                            <li><a href="#">Data & Analytics</a></li>
+                            <li><a href="#">Mobile Apps</a></li>
+                            <li><a href="#">System Integration</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Documentation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 DXFactor. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========== Animation Handling ==========
+        // Handle animation triggers on scroll
+        const animateOnScroll = () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const delay = target.getAttribute('data-delay') || '0s';
+                        target.style.animationDelay = delay;
+                        target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animation attributes
+            document.querySelectorAll('[data-animation]').forEach(el => {
+                observer.observe(el);
+            });
+        };
+
+        // ========== Dynamic Cursor ==========
+        const initCustomCursor = () => {
+            const cursor = document.querySelector('.cursor');
+            if (!cursor) return;
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = `${e.clientX}px`;
+                cursor.style.top = `${e.clientY}px`;
+            });
+
+            document.addEventListener('mousedown', () => {
+                cursor.classList.add('active');
+            });
+
+            document.addEventListener('mouseup', () => {
+                cursor.classList.remove('active');
+            });
+
+            // Add active state when hovering over interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, input, .agent-card, .service-card, .testimonial-card');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.classList.add('active');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('active');
+                });
+            });
+        };
+
+        // ========== Header Behavior ==========
+        const initHeaderBehavior = () => {
+            const header = document.querySelector('.header');
+            if (!header) return;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        };
+
+        // ========== Testimonial Carousel ==========
+        const initTestimonialCarousel = () => {
+            const track = document.querySelector('.testimonials-track');
+            const indicators = document.querySelectorAll('.testimonial-indicators .indicator');
+            const prevBtn = document.querySelector('.testimonial-arrow.prev');
+            const nextBtn = document.querySelector('.testimonial-arrow.next');
+            
+            if (!track || !indicators.length || !prevBtn || !nextBtn) return;
+            
+            let currentIndex = 0;
+            
+            const updateCarousel = () => {
+                // Update scroll position
+                const cardWidth = track.querySelector('.testimonial-card').offsetWidth;
+                const gap = parseInt(window.getComputedStyle(track).gap);
+                const scrollPosition = currentIndex * (cardWidth + gap);
+                
+                track.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update indicators
+                indicators.forEach((ind, i) => {
+                    if (i === currentIndex) {
+                        ind.classList.add('active');
+                    } else {
+                        ind.classList.remove('active');
+                    }
+                });
+            };
+            
+            // Connect buttons
+            nextBtn.addEventListener('click', () => {
+                const total = track.querySelectorAll('.testimonial-card').length;
+                currentIndex = (currentIndex + 1) % total;
+                updateCarousel();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                const total = track.querySelectorAll('.testimonial-card').length;
+                currentIndex = (currentIndex - 1 + total) % total;
+                updateCarousel();
+            });
+            
+            // Connect indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+        };
+
+        // ========== Agent Category Tabs ==========
+        const initAgentTabs = () => {
+            const tabs = document.querySelectorAll('.agent-tab');
+            const cards = document.querySelectorAll('.agent-card');
+            
+            if (!tabs.length || !cards.length) return;
+            
+            const filterCards = (category) => {
+                cards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            };
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Filter cards
+                    const category = tab.dataset.category;
+                    filterCards(category);
+                });
+            });
+        };
+
+        // ========== Agent Card Flip ==========
+        const initAgentCards = () => {
+            const backBtns = document.querySelectorAll('.agent-back-btn');
+            const detailBtns = document.querySelectorAll('.agent-details-btn');
+            
+            if (!backBtns.length || !detailBtns.length) return;
+            
+            // Make the flip happen on button click instead of hover
+            detailBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = btn.closest('.agent-card');
+                    if (card) {
+                        card.querySelector('.agent-card-inner').style.transform = 'rotateY(180deg)';
+                    }
+                });
+            });
+            
+            backBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const card = btn.closest('.agent-card');
+                    if (card) {
+                        card.querySelector('.agent-card-inner').style.transform = 'rotateY(0deg)';
+                    }
+                });
+            });
+        };
+
+        // ========== Smooth Scrolling ==========
+        const initSmoothScrolling = () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    e.preventDefault();
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        };
+
+        // Initialize everything when DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            animateOnScroll();
+            initCustomCursor();
+            initHeaderBehavior();
+            initTestimonialCarousel();
+            initAgentTabs();
+            initAgentCards();
+            initSmoothScrolling();
+            
+            // Fix backdrop-filter for Safari
+            document.querySelectorAll('.hero-badge, .stat').forEach(el => {
+                el.style.webkitBackdropFilter = 'blur(10px)';
+            });
+        });
+    </script>
+</body>
+</html>
